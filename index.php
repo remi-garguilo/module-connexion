@@ -1,4 +1,4 @@
-<html >
+<html>
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/index.css" />
@@ -10,7 +10,7 @@
 	<p class="lead">Welcome to my site</p>
 	<div class="header-bar">
 		<h1 class="logo">
-		    <img  src="css/img/icons.png" />
+		    <a href="connexion.php"><img src="css/img/icons.png"/></a>
 		</h1>
 		<ul class="slider-menu">
 			<li><a href="index.php">Home</a></li>
