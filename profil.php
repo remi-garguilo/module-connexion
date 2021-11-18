@@ -1,7 +1,10 @@
 <?php
-session_start();
-require('functionsql.php');
+    session_start();
+    var_dump($_SESSION);
+    require('functionsql.php');
+    destroy_my_session();
 ?>
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -14,12 +17,11 @@ require('functionsql.php');
 	<p class="lead">Welcome to my site</p>
 	<div class="header-bar">
 		<h1 class="logo">
-		    <a href="connexion.php"><img src="css/img/icons.png"/></a>
-            <?php user_param() ?>
+		    <a href="profil.php"><img src="css/img/icons.png"/></a>
+            <p><?php user_param() ?></p>
 		</h1>
 		<ul class="slider-menu">
-			<li><a href="connexion.php">Connexion</a></li>
-			<li><a href="inscription.php">Inscription</a></li>
+            <?php disp_connect(); ?>
 		</ul>
 	</div>
 </div>
