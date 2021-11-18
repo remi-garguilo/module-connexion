@@ -1,13 +1,12 @@
 <?php
 session_start();
 require ('functionsql.php');
-connect_db();
 ?>
 <html >
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/inscription.css" />
-        <title>Inscription</title>
+        <title>Connexion</title>
     </head>
 <body>
 <header>

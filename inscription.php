@@ -1,6 +1,6 @@
  <?php
  require('functionsql.php');
- new_user();
+
 ?>
 <html >
     <head>
@@ -23,7 +23,7 @@
       <input class="button" type="submit" value="Login"/>
       <p class="message">Already registered ? <a href="connexion.php"><strong>Sign in</strong></a></p>
     </form>
-    <?php if (check_pw() == 0);?>
+    <?php new_user();; ?>
   </div>
 </div>
 </form>

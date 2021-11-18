@@ -1,6 +1,5 @@
 <?php
     session_start();
-    var_dump($_SESSION);
     require('functionsql.php');
     destroy_my_session();
 ?>
@@ -17,7 +16,6 @@
 	<p class="lead">Welcome to my site</p>
 	<div class="header-bar">
 		<h1 class="logo">
-		    <a href="profil.php"><img src="css/img/icons.png"/></a>
             <p><?php user_param() ?></p>
 		</h1>
 		<ul class="slider-menu">

@@ -1,8 +1,9 @@
 <?php
+
 function check_pw() {
     if (isset($_POST['password']) && isset($_POST['Confirmedpassword'])) {
         if ($_POST['password'] != $_POST['Confirmedpassword']) {
-            echo'<p style="color:#FF0000";> <strong> Your password and your Confirmed password is different, please try again</strong></p>';
+            echo'<p style="color:#FF0000";> <strong> Passwords are not identical</strong></p>';
             return 0;
         }
     }
@@ -17,11 +18,21 @@ function new_user() {
         $nom= $_POST['nom'];
         $password = $_POST['password'];
         $Confirmedpassword = $_POST['Confirmedpassword'];
-        if (check_pw() == 0) {
+        $requete2 = mysqli_query($Bdd, "SELECT * FROM utilisateurs WHERE login='".$login."'");
+        $count2= mysqli_num_rows($requete2);
+        if($count2 == 1) {
+            echo'<p style="color:#FF0000";> <strong> This login is already use</strong></p>';
+        }
+        else if ($login == NULL || $prenom == NULL || $nom == NULL || $password == NULL ) {
+            echo'<p style="color:#FF0000";> <strong> You have an empty fields</strong></p>';
+        }
+        else if (check_pw() != 0) {
             $Requete = mysqli_query($Bdd, "INSERT INTO utilisateurs (login, prenom, nom, password) VALUES ('$login','$prenom','$nom','$password')");
             header('Location: connexion.php');
-            return 0;
             }
+    }
+    else {
+        echo 'Please complete all fields';
     }
 }
 
@@ -42,11 +53,13 @@ function connect_db() {
                 return 1;
             }
         }
+        else {
+             echo'<p style="color:#FF0000";> <strong> You have an empty fields</strong></p>';
+        }
     }
 }
 function destroy_my_session() {
     if (isset($_GET["Deconnect"])){
-        //header('Location: index.php');
         session_destroy();
     }
 }
@@ -58,11 +71,14 @@ function disp_connect() {
 }
 function user_param() {
     if (isset($_SESSION['login'])) {
-        echo 'Welcome, '.$_SESSION['login'].' vous etes connecte';
-        echo ('<form method="GET"><input type="submit" name="Deconnect" value="Deconnect"/></form>');
+        echo 'Welcome, '.$_SESSION['login'].' you are connected';
+        echo ('<form method="GET"><input type="submit" name="Deconnect" value="Disconnect"/></form>');
+        if ($_SESSION['login'] == 'admin') {
+            echo ('<ul class="slider-menu_end"><li><a href="connexion.php">Admin</a></li></ul>');
+        }
     }
     else {
-        echo 'vous etes pas connecté';
+        echo 'You are disconnect';
     }
 }
 ?>

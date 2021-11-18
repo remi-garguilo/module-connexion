@@ -14,7 +14,6 @@ require('functionsql.php');
 	<p class="lead">Welcome to my site</p>
 	<div class="header-bar">
 		<h1 class="logo">
-		    <a href="connexion.php"><img src="css/img/icons.png"/></a>
             <?php user_param() ?>
 		</h1>
 		<ul class="slider-menu">
