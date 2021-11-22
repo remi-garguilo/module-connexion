@@ -39,16 +39,15 @@ function connect_db() {
             $count= mysqli_num_rows($requete);
             $fetch= mysqli_fetch_assoc($requete);
             if (isset($fetch)) {
-                
                 $sql_password= $fetch['password'];
             }
             else {
-                echo 'rerror';
+                echo'<p style="color:#FF0000";> <strong> Account not found</strong></p>';
             }
             var_dump($fetch);
             if ($count == 1) {
                 if (password_verify($pw, $sql_password) == FALSE) {
-                    echo 'Le mot de passe est invalide.';
+                    echo'<p style="color:#FF0000";> <strong> Password invalid </strong></p>';
                 }
                 else {
                 header('Location: profil.php');
