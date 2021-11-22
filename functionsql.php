@@ -44,7 +44,6 @@ function connect_db() {
             else {
                 echo'<p style="color:#FF0000";> <strong> Account not found</strong></p>';
             }
-            var_dump($fetch);
             if ($count == 1) {
                 if (password_verify($pw, $sql_password) == FALSE) {
                     echo'<p style="color:#FF0000";> <strong> Password invalid </strong></p>';
