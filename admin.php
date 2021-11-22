@@ -54,7 +54,7 @@ $users = mysqli_fetch_all($Requete, MYSQLI_ASSOC);  // Récuperer ce que les req
 <footer>
 <div class="footer">
             <div class="footer1">
-                <a href="https://github.com/remi-garguilo/module-connexion"><img class="socialMedia2"  src="images/GitHub-Logo.png"></a>
+            <a href="https://github.com/remi-garguilo/module-connexion"><img class="socialMedia2"  src="css/img/GitHub-Logo.png"></a>
             </div>
             <div class="footer2">
                 Copyright © 2021 Rémi. All Rights Reserved
