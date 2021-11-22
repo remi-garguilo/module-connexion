@@ -37,13 +37,12 @@
                 Copyright © 2021 Rémi. All Rights Reserved
             </div>
             <div class="footer3">
-                <a href="https://twitter.com/"><img class="socialMedia"  src="img/Twitter.png"></a>
-                <a href="https://facebook.com/"><img class="socialMedia" src="img/Facebook.png"></a>
-                <a href="https://instagram.com/"><img class="socialMedia" src="img/Instagram.png"></a>
-                <a href="https://youtube.com/"><img class="socialMedia" src="img/Youtube.png"></a>
+                <a href="https://twitter.com/"><img class="socialMedia"  src="css/img/Twitter.png"></a>
+                <a href="https://facebook.com/"><img class="socialMedia" src="css/img/Facebook.png"></a>
+                <a href="https://instagram.com/"><img class="socialMedia" src="css/img/Instagram.png"></a>
+                <a href="https://youtube.com/"><img class="socialMedia" src="css/img/Youtube.png"></a>
             </div>
         </div>
-    </footer>
 </footer>
 </body>
 </html>
