@@ -2,9 +2,6 @@
     session_start();
     require('functionsql.php');
     destroy_my_session();
-    echo ('<pre>');
-    var_dump($_SESSION);
-    echo ('</pre>');
 ?>
 
 <html>

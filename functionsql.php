@@ -1,8 +1,7 @@
 <?php
 
 function new_user() {
-    $Bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
-    mysqli_set_charset($Bdd, 'utf8');
+    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
     if (isset($_POST['login']) && isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['password'])) {
         $login= $_POST['login'];
         $prenom= $_POST['prenom'];
@@ -33,7 +32,7 @@ function connect_db() {
         $login = $_POST['login'];
         $pw= $_POST['password'];
         if ($login != NULL && $pw != NULL) {
-            $bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
+            $bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
             mysqli_set_charset($bdd, 'utf8');
             $requete = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login='$login' ");
             $count= mysqli_num_rows($requete);
@@ -62,7 +61,7 @@ function connect_db() {
 
 
 function update_db_login(){
-    $Bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
+    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
     mysqli_set_charset($Bdd, 'utf8');
     if (isset($_POST['newLogin'])) {
         $newLogin= $_POST['newLogin'];
@@ -95,7 +94,7 @@ function update_db_login(){
 }
 
 function update_db_prenom() {
-    $Bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
+    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
     mysqli_set_charset($Bdd, 'utf8');
     if (isset($_POST['newPrenom'])) {
         $newPw= $_POST['newPrenom'];
@@ -117,8 +116,7 @@ function update_db_prenom() {
 }
 
 function update_db_nom() {
-    $Bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
-    mysqli_set_charset($Bdd, 'utf8');
+    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
     if (isset($_POST['newNom'])) {
         $newPw= $_POST['newNom'];
         $pw = $_SESSION['user']['nom'];
@@ -139,7 +137,7 @@ function update_db_nom() {
 }
 
 function update_db_password() {
-    $Bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
+    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
     mysqli_set_charset($Bdd, 'utf8');
     if (isset($_POST['newPassword'])) {
         $newPw= $_POST['newPassword'];
