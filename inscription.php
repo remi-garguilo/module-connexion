@@ -23,7 +23,7 @@
       <input class="button" type="submit" value="Login"/>
       <p class="message">Already registered ? <a href="connexion.php"><strong>Sign in</strong></a></p>
     </form>
-    <?php new_user();; ?>
+    <?php new_user(); ?>
   </div>
 </div>
 </form>

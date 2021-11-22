@@ -6,7 +6,7 @@ require ('functionsql.php');
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/inscription.css" />
-        <title>Connexion</title>
+        <title>Change login</title>
     </head>
 <body>
 <header>
@@ -15,12 +15,10 @@ require ('functionsql.php');
 <div class="login-page">
   <div class="form">
     <form action="" method="post" class="login-form">
-    <input type="text" id="login" name="login" placeholder="Login"/>
-    <input type="password" id="password" name="password" placeholder="Password"/>
-    <input class="button" type="submit" name='connect' value="Login"/>
-    <p class="message">You don't have an account ? <a href="inscription.php">Click here</a></p>
+    <input type="text" id="login" name="newLogin" placeholder=" New login"/>
+    <input class="button" type="submit" name='connect' value="Send"/>
     </form>
-    <?php connect_db();?>
+    <?php update_db_login();?>
   </div>
 </div>
 </form>

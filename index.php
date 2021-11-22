@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('functionsql.php');
+destroy_my_session();
 ?>
 <html>
     <head>
@@ -24,15 +25,6 @@ require('functionsql.php');
 </div>
 </header>
 <main>
-    <div  class="container">
-        <div class = "containTop">
-            <div class="containCenterOfTop">
-            <div></div>
-            <div></div>
-            <div></div>
-            </div>
-        </div>
-    </div>
 </main>
 </footer>
 </body>

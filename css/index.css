@@ -20,6 +20,30 @@ html, body {
 @font-face {
     font-family: 'sunflower'; src: url('ttf/made_sunflower/sunflower.otf');
 }
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 0 0 1em 0;
+    caption-side: top;
+  }
+
+  caption, td, th {
+    padding: 0.3em;
+  }
+
+  th, td {
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+
+  th:last-child, td:last-child {
+    border-right: 0;
+  }
+
+  th {
+    width: 25%;
+  }
 
 .containerHeader {
     height: 50%;
@@ -128,29 +152,62 @@ html, body {
     flex-direction: column;
     height: 50%;
 }
-.containBot {
-    display: flex;
-    flex-direction: column;
-    height: 50%;
-    background-color: var(--color--background);
-}
 
 .containCenterOfTop {
     display: flex;
     height: 50%;
     background-color: var(--color--background);
 }
-.containCenterOfTop :nth-child(1){
+.containCenterOfTop div:nth-child(1){
     width:5%;
     background-color: var(--color--background);
 }
-.containCenterOfTop :nth-child(2){
-    width:90%;
+.containCenterOfTop div:nth-child(2){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:30%;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
     background-color: var(--color--background-black);
 }
-.containCenterOfTop :nth-child(3){
+.containCenterOfTop div:nth-child(3){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:30%;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+    background-color: var(--color--background-black);
+}
+.containCenterOfTop div:nth-child(4){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:30%;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+    background-color: var(--color--background-black);
+}
+.containCenterOfTop div:nth-child(5){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:30%;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+    background-color: var(--color--background-black);
+}
+.containCenterOfTop div:nth-child(6){
     width:5%;
     background-color: var(--color--background);
 }
 /* MAIN*/
+
+.containerAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 

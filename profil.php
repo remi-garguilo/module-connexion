@@ -2,6 +2,9 @@
     session_start();
     require('functionsql.php');
     destroy_my_session();
+    echo ('<pre>');
+    var_dump($_SESSION);
+    echo ('</pre>');
 ?>
 
 <html>
@@ -19,7 +22,7 @@
             <p><?php user_param() ?></p>
 		</h1>
 		<ul class="slider-menu">
-            <?php disp_connect(); ?>
+            <?php disp(); ?>
 		</ul>
 	</div>
 </div>
@@ -29,9 +32,11 @@
         <div class = "containTop">
             <div class="containCenterOfTop">
             <div></div>
+            <div><a href="login.php"><button>Change your login</button></a></div>
+            <div><a href="fname.php"><button>Change your firstname </button></a></div>
+            <div><a href="lname.php"><button>Change your lastname</button></a></div>
+            <div><a href="password.php"> <button>Change your password</button></a></div>
             <div></div>
-            <div></div>
-            </div>
         </div>
     </div>
 </main>
