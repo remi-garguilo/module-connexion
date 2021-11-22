@@ -25,7 +25,7 @@ require ('functionsql.php');
 </div>
 </form>
 </main>
-<<footer>
+<footer>
 <div class="footer">
             <div class="footer1">
                 <a href="https://github.com/remi-garguilo/module-connexion"><img class="socialMedia2"  src="css/img/GitHub-Logo.png"></a>

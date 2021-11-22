@@ -1,7 +1,7 @@
 <?php
 
 function new_user() {
-    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
+    $Bdd =  mysqli_connect('localhost', 'root', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
     if (isset($_POST['login']) && isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['password'])) {
         $login= $_POST['login'];
         $prenom= $_POST['prenom'];
