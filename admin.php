@@ -6,7 +6,7 @@ if ($_SESSION['user']['login'] && $_SESSION['user']['login'] != 'admin') {
 }
 require('functionsql.php');
 destroy_my_session_admin();
-$Bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion'); // Appeller la bdd
+$Bdd = mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion'); // Appeller la bdd
 mysqli_set_charset($Bdd, 'utf8'); // Intégrer tous les char
 $Requete = mysqli_query($Bdd, "SELECT * FROM utilisateurs"); // Déclarer la requête
 $users = mysqli_fetch_all($Requete, MYSQLI_ASSOC);  // Récuperer ce que les requêtes renvoient
