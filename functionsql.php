@@ -1,7 +1,7 @@
 <?php
 
 function new_user() {
-    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
+    $Bdd =  mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
     if (isset($_POST['login']) && isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['password'])) {
         $login= $_POST['login'];
         $prenom= $_POST['prenom'];
@@ -32,7 +32,7 @@ function connect_db() {
         $login = $_POST['login'];
         $pw= $_POST['password'];
         if ($login != NULL && $pw != NULL) {
-            $bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
+            $bdd =  mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
             mysqli_set_charset($bdd, 'utf8');
             $requete = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login='$login' ");
             $count= mysqli_num_rows($requete);
@@ -61,7 +61,7 @@ function connect_db() {
 
 
 function update_db_login(){
-    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
+    $Bdd =  mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
     mysqli_set_charset($Bdd, 'utf8');
     if (isset($_POST['newLogin'])) {
         $newLogin= $_POST['newLogin'];
@@ -94,7 +94,7 @@ function update_db_login(){
 }
 
 function update_db_prenom() {
-    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
+    $Bdd =  mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
     mysqli_set_charset($Bdd, 'utf8');
     if (isset($_POST['newPrenom'])) {
         $newPw= $_POST['newPrenom'];
@@ -116,7 +116,7 @@ function update_db_prenom() {
 }
 
 function update_db_nom() {
-    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
+    $Bdd =  mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
     if (isset($_POST['newNom'])) {
         $newPw= $_POST['newNom'];
         $pw = $_SESSION['user']['nom'];
@@ -127,7 +127,7 @@ function update_db_nom() {
         $fetch= mysqli_fetch_assoc($request);
         $_SESSION['user'] = $fetch;
         header('Location: profil.php');
-        if ($pw == NULL || $Confirmedpw == NULL ) {
+        if ($pw == NULL ) {
             echo'<p style="color:#FF0000";> <strong> You have an empty fields</strong></p>';
         }
     }
@@ -137,7 +137,7 @@ function update_db_nom() {
 }
 
 function update_db_password() {
-    $Bdd =  mysqli_connect('localhost', 'remi-garguilo', 'FTprZ]cx1', 'remi-garguilo_module-connexion');
+    $Bdd =  mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
     mysqli_set_charset($Bdd, 'utf8');
     if (isset($_POST['newPassword'])) {
         $newPw= $_POST['newPassword'];
@@ -185,6 +185,43 @@ function disp() {
     }
     else if(isset($_SESSION['user']['login']) && isset($_SESSION['user']['login']) == NULL) {
         echo ('<ul class="slider-menu"><li><a href="connexion.php">Connexion</a></li></ul>');
+    }
+}
+
+function disp_elem() {
+    if ($_SESSION['user']['login'] == 'admin') {
+        echo ('<ul class="slider-menu"><li><a href="index.php">Accueil</a></li>
+        <li><a href="profil.php">Profil</a></li>
+        <li><a href="admin.php">Admin</a></li>
+        </ul>');
+    }
+    else {
+        echo ('<ul class="slider-menu"><li><a href="index.php">Accueil</a></li>
+        <li><a href="profil.php">Profil</a></li></ul>');
+    }
+}
+function disp_elem_without_session() {
+    if (!isset($_SESSION['user']['login'])) {
+        echo ('<ul class="slider-menu"><li><a href="connexion.php">Connexion</a></li>
+        <li><a href="inscription.php">Inscription</a></li>
+        </ul>');
+    }
+}
+
+function Info(){
+    if (isset($_SESSION['user']['login'])){
+        $ConnectedUser = $_SESSION['user']['login'];
+        $Bdd = mysqli_connect('localhost', 'root', 'root', 'moduleconnexion');
+        $Requete = mysqli_query($Bdd, "SELECT login, prenom, nom FROM utilisateurs WHERE login= '$ConnectedUser'");
+        $rows = mysqli_num_rows($Requete);
+        if ($rows == 1){
+            $Users = mysqli_fetch_all($Requete, MYSQLI_ASSOC);
+            foreach ($Users as $User){
+                echo'<h2 class = "p1">Nom : '.$User['nom'].'<br></h2>';
+                echo'<h2 class = "p2">Prenom : '.$User['prenom'].'<br></h2>';
+                echo'<h2 class = "p3">Login : '.$User['login'].'</h2>';
+            }
+        }
     }
 }
 ?>

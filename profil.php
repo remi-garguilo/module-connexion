@@ -19,7 +19,15 @@
             <p><?php user_param() ?></p>
 		</h1>
 		<ul class="slider-menu">
-            <?php disp(); ?>
+            <ul class="slider-menu">
+            <?php if (isset($_SESSION['user']['login'])) {
+                disp_elem();
+            }
+            else {
+                disp_elem_without_session();
+            }
+            ?>
+            </ul>
 		</ul>
 	</div>
 </div>
@@ -27,6 +35,7 @@
 <main>
     <div  class="container">
         <div class = "containTop">
+            <div class=Info_profil><?php Info(); ?></div>
             <div class="containCenterOfTop">
             <div></div>
             <div><a href="login.php"><button>Change your login</button></a></div>

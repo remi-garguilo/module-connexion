@@ -18,8 +18,13 @@ destroy_my_session();
             <?php user_param() ?>
 		</h1>
 		<ul class="slider-menu">
-			<li><a href="connexion.php">Connexion</a></li>
-			<li><a href="inscription.php">Inscription</a></li>
+            <?php if ($_SESSION) {
+                disp_elem();
+            }
+            else {
+                disp_elem_without_session();
+            }
+            ?>
 		</ul>
 	</div>
 </div>
